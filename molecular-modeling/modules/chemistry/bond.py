@@ -1,0 +1,19 @@
+from enum import Enum
+from modules.common.helper import calculeDistanceAB
+from modules.chemistry.atom import Atom
+
+
+class BondType(Enum):
+    SINGLE = 1
+    DOUBLE = 2
+    PEPTIDE = 1
+
+
+class Bond:
+
+    def __init__(self, first_atom: Atom, second_atom: Atom, bond_type):
+        self.first_atom = first_atom
+        self.second_atom = second_atom
+        self.bond_type = bond_type
+        self.bond_lenght = calculeDistanceAB(first_atom.position, second_atom.position)
+
