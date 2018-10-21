@@ -1,36 +1,47 @@
 from enum import Enum
 from modules.chemistry.atom import Atom, AtomName
 from modules.chemistry.bond import Bond, BondType
+from modules.common.config import DIRECTORY_PATH
+import random
 
 
-ALPHABET =  "ARNDCEQGHILKMFPSTWYVUOX"
-DIRECTORY_PATH = "/Users/tatianefx/PycharmProjects/tcc-molecular-modeling/molecular-modeling/modules/common/amino_acids/"
+ALPHABET = "ARNDCEQGHILKMFPSTWYVUOX"
 
 
 class AminoAcidType(Enum):
-    ALANINE = 'A'
-    ARGININE = 'R'
-    ASPARAGINE = 'N'
-    ASPARTIC_ACID = 'D'
-    CYSTEINE = 'C'
-    GLUTAMIC_ACID = 'E'
-    GLUTAMINE = 'Q'
-    GLYCINE = 'G'
-    HISTIDINE = 'H'
-    ISOLEUCINE = 'I'
-    LEUCINE = 'L'
-    LYSINE = 'K'
-    METHIONINE = 'M'
-    PHENYLALANINE = 'F'
-    PROLINE = 'P'
-    SERINE = 'S'
-    THREONINE = 'T'
-    TRYPTOPHAN = 'W'
-    TYROSINE = 'Y'
-    VALINE = 'V'
-    SELENOCYSTEINE = 'U'
-    PYRROLYSINE = 'O'
-    UNKNOWN = 'X'
+    ALANINE = ('A', DIRECTORY_PATH + "Alanine.mol")
+    ARGININE = ('R', DIRECTORY_PATH + "Arginine.mol")
+    ASPARAGINE = ('N', DIRECTORY_PATH + "Asparagine.mol")
+    ASPARTIC_ACID = ('D', DIRECTORY_PATH + "Aspartic_acid.mol")
+    CYSTEINE = ('C', DIRECTORY_PATH + "Cysteine.mol")
+    GLUTAMIC_ACID = ('E', DIRECTORY_PATH + "Glutamic_acid.mol")
+    GLUTAMINE = ('Q', DIRECTORY_PATH + "Glutamine.mol")
+    GLYCINE = ('G', DIRECTORY_PATH + "Glycine.mol")
+    HISTIDINE = ('H', DIRECTORY_PATH + "Histidine.mol")
+    ISOLEUCINE = ('I', DIRECTORY_PATH + "Isoleucine.mol")
+    LEUCINE = ('L', DIRECTORY_PATH + "Leucine.mol")
+    LYSINE = ('K', DIRECTORY_PATH + "Lysine.mol")
+    METHIONINE = ('M', DIRECTORY_PATH + "Methionine.mol")
+    PHENYLALANINE = ('F', DIRECTORY_PATH + "L-phenylalanine.mol")
+    PROLINE = ('P', DIRECTORY_PATH + "Proline.mol")
+    SERINE = ('S', DIRECTORY_PATH + "Serine.mol")
+    THREONINE = ('T', DIRECTORY_PATH + "Threonine.mol")
+    TRYPTOPHAN = ('W', DIRECTORY_PATH + "Tryptophan.mol")
+    TYROSINE = ('Y', DIRECTORY_PATH + "Tyrosine.mol")
+    VALINE = ('V', DIRECTORY_PATH + "Valine.mol")
+    SELENOCYSTEINE = ('U', DIRECTORY_PATH + "Selenocysteine.mol")
+    PYRROLYSINE = ('O', DIRECTORY_PATH + "Pyrrolysine.mol")
+    UNKNOWN = ('X', '')
+
+    @staticmethod
+    def list():
+        return list(map(lambda a: a.value, AminoAcidType))
+
+    @staticmethod
+    def random_choice():
+        values = AminoAcidType.list()
+        values.pop()
+        return AminoAcidType(random.choice(values))
 
 
 class AminoAcid:
@@ -68,54 +79,58 @@ class AminoAcid:
 
     @staticmethod
     def generate_amino_acid_molecule(amino_acid):
-        if amino_acid == AminoAcidType.ALANINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Alanine.mol", AminoAcidType.ALANINE)
-        elif amino_acid == AminoAcidType.ARGININE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Arginine.mol", AminoAcidType.ARGININE)
-        elif amino_acid == AminoAcidType.ASPARAGINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Asparagine.mol", AminoAcidType.ASPARAGINE)
-        elif amino_acid == AminoAcidType.ASPARTIC_ACID.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Aspartic_acid.mol", AminoAcidType.ASPARTIC_ACID)
-        elif amino_acid == AminoAcidType.CYSTEINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Cysteine.mol", AminoAcidType.CYSTEINE)
-        elif amino_acid == AminoAcidType.GLUTAMIC_ACID.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Glutamic_acid.mol", AminoAcidType.GLUTAMIC_ACID)
-        elif amino_acid == AminoAcidType.GLUTAMINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Glutamine.mol", AminoAcidType.GLUTAMINE)
-        elif amino_acid == AminoAcidType.GLYCINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Glycine.mol", AminoAcidType.GLYCINE)
-        elif amino_acid == AminoAcidType.HISTIDINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Histidine.mol", AminoAcidType.HISTIDINE)
-        elif amino_acid == AminoAcidType.ISOLEUCINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Isoleucine.mol", AminoAcidType.ISOLEUCINE)
-        elif amino_acid == AminoAcidType.LEUCINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Leucine.mol", AminoAcidType.LEUCINE)
-        elif amino_acid == AminoAcidType.LYSINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Lysine.mol", AminoAcidType.LYSINE)
-        elif amino_acid == AminoAcidType.METHIONINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Methionine.mol", AminoAcidType.METHIONINE)
+        if amino_acid == AminoAcidType.ALANINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.ALANINE)
+        elif amino_acid == AminoAcidType.ARGININE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.ARGININE)
+        elif amino_acid == AminoAcidType.ASPARAGINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.ASPARAGINE)
+        elif amino_acid == AminoAcidType.ASPARTIC_ACID.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.ASPARTIC_ACID)
+        elif amino_acid == AminoAcidType.CYSTEINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.CYSTEINE)
+        elif amino_acid == AminoAcidType.GLUTAMIC_ACID.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.GLUTAMIC_ACID)
+        elif amino_acid == AminoAcidType.GLUTAMINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.GLUTAMINE)
+        elif amino_acid == AminoAcidType.GLYCINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.GLYCINE)
+        elif amino_acid == AminoAcidType.HISTIDINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.HISTIDINE)
+        elif amino_acid == AminoAcidType.ISOLEUCINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.ISOLEUCINE)
+        elif amino_acid == AminoAcidType.LEUCINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.LEUCINE)
+        elif amino_acid == AminoAcidType.LYSINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.LYSINE)
+        elif amino_acid == AminoAcidType.METHIONINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.METHIONINE)
         elif amino_acid == AminoAcidType.PHENYLALANINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "L-phenylalanine.mol", AminoAcidType.PHENYLALANINE)
-        elif amino_acid == AminoAcidType.SERINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Serine.mol", AminoAcidType.SERINE)
-        elif amino_acid == AminoAcidType.THREONINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Threonine.mol", AminoAcidType.THREONINE)
-        elif amino_acid == AminoAcidType.TRYPTOPHAN.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Tryptophan.mol", AminoAcidType.TRYPTOPHAN)
-        elif amino_acid == AminoAcidType.TYROSINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Tyrosine.mol", AminoAcidType.TYROSINE)
-        elif amino_acid == AminoAcidType.VALINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Valine.mol", AminoAcidType.VALINE)
-        elif amino_acid == AminoAcidType.SELENOCYSTEINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Selenocysteine.mol", AminoAcidType.SELENOCYSTEINE)
-        elif amino_acid == AminoAcidType.PYRROLYSINE.value:
-            return AminoAcid.__get_amino_acid_by_path(DIRECTORY_PATH + "Pyrrolysine.mol", AminoAcidType.PYRROLYSINE)
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.PHENYLALANINE)
+        elif amino_acid == AminoAcidType.PROLINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.PROLINE)
+        elif amino_acid == AminoAcidType.SERINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.SERINE)
+        elif amino_acid == AminoAcidType.THREONINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.THREONINE)
+        elif amino_acid == AminoAcidType.TRYPTOPHAN.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.TRYPTOPHAN)
+        elif amino_acid == AminoAcidType.TYROSINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.TYROSINE)
+        elif amino_acid == AminoAcidType.VALINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.VALINE)
+        elif amino_acid == AminoAcidType.SELENOCYSTEINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.SELENOCYSTEINE)
+        elif amino_acid == AminoAcidType.PYRROLYSINE.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.PYRROLYSINE)
+        elif amino_acid == AminoAcidType.UNKNOWN.value[0]:
+            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.random_choice())
         else:
             return
 
     @staticmethod
-    def __get_amino_acid_by_path(amino_acid_path, type):
-        with open(amino_acid_path) as f:
+    def __get_amino_acid_by_path(type: AminoAcidType):
+        with open(type.value[1]) as f:
             size = 0
             num_bonds = 0
 

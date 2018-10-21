@@ -6,5 +6,3 @@ amino_acid = input("Digite uma sequência de aminoácidos: ")
 
 if AminoAcid.is_valid(amino_acid):
     Molecule.generate_peptide_molecule(amino_acid)
-
-

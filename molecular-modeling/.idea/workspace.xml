@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f968f58-8d7e-4fb1-ace1-4d2f3088cfba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/molecular-modeling.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/molecular-modeling.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/common/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/genetic-algorithms/gene.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/chemistry/amino_acid.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chemistry/amino_acid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/chemistry/bond.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chemistry/bond.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/chemistry/molecule.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chemistry/molecule.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,26 +62,37 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="870" />
+          <entry key="dummy" value="5" />
+          <entry key="py" value="1484" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="870" />
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="Python" value="1484" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
-      <usages-collector id="statistics.file.types.open" />
-      <usages-collector id="statistics.file.extensions.open" />
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="4" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -93,19 +101,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/enum.py">
+        <entry file="file://$PROJECT_DIR$/modules/genetic-algorithms/gene.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3330">
-              <caret line="223" selection-start-line="223" selection-end-line="223" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24855">
-              <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <marker date="1540137085837" expanded="true" signature="103:104" ph="..." />
+                <marker date="1540137085837" expanded="true" signature="103:105" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,18 +123,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/chemistry/amino_acid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="111" column="115" selection-start-line="111" selection-start-column="115" selection-end-line="111" selection-end-column="115" />
+            <state relative-caret-position="291">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1540093270476" expanded="true" signature="1008:1151" ph="..." />
-                <marker date="1540093270476" expanded="true" signature="1145:1146" ph="..." />
-                <marker date="1540093270476" expanded="true" signature="1188:1565" ph="..." />
-                <marker date="1540093270476" expanded="true" signature="1793:1799" ph="..." />
-                <marker date="1540093270476" expanded="true" signature="5501:5507" ph="..." />
+                <marker date="1540140229076" expanded="true" signature="2000:2143" ph="..." />
+                <marker date="1540140229076" expanded="true" signature="2137:2138" ph="..." />
+                <marker date="1540140229076" expanded="true" signature="2180:2557" ph="..." />
+                <marker date="1540140229076" expanded="true" signature="2785:2791" ph="..." />
+                <marker date="1540140229076" expanded="true" signature="6112:6118" ph="..." />
               </folding>
             </state>
           </provider>
@@ -151,6 +155,15 @@
                 <marker date="1540091760502" expanded="true" signature="123:124" ph="..." />
                 <marker date="1540091760502" expanded="true" signature="123:125" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/common/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -185,6 +198,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>PROLINE</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -195,9 +213,11 @@
         <option value="$PROJECT_DIR$/modules/utils/__helper__.py" />
         <option value="$PROJECT_DIR$/modules/chemistry/atom.py" />
         <option value="$PROJECT_DIR$/modules/chemistry/molecule.py" />
-        <option value="$PROJECT_DIR$/modules/__init__.py" />
         <option value="$PROJECT_DIR$/modules/chemistry/bond.py" />
+        <option value="$PROJECT_DIR$/modules/common/config.py" />
+        <option value="$PROJECT_DIR$/modules/genetic-algorithms/gene.py" />
         <option value="$PROJECT_DIR$/modules/chemistry/amino_acid.py" />
+        <option value="$PROJECT_DIR$/modules/__init__.py" />
       </list>
     </option>
   </component>
@@ -229,6 +249,25 @@
               <item name="molecular-modeling" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="chemistry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecular-modeling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecular-modeling" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecular-modeling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecular-modeling" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="amino_acids" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="molecular-modeling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="molecular-modeling" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="genetic-algorithms" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -291,6 +330,14 @@
       <option name="presentableId" value="Default" />
       <updated>1540048913737</updated>
     </task>
+    <task id="LOCAL-00001" summary="Binding between amino acids">
+      <created>1540093396239</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1540093396240</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -312,7 +359,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
@@ -328,6 +375,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Binding between amino acids" />
+    <option name="LAST_COMMIT_MESSAGE" value="Binding between amino acids" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -336,49 +387,63 @@
           <line>22</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/modules/chemistry/amino_acid.py</url>
+          <line>132</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/modules/chemistry/amino_acid.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>from modules.chemistry.bond import BondType
-
-BondType(1)</expression-string>
+        <expression-string>AminoAcidType(x)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>from modules.chemistry.bond import BondType
-
-Bond(1)</expression-string>
+        <expression-string>amino_acid</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>from modules.chemistry.bond import BondType
-
-Bond</expression-string>
+        <expression-string>random.choice(types)[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>list(AminoAcidType)</expression-string>
+        <expression-string>AminoAcidType(random.choice(types)[0])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>for x in list(AminoAcidType)</expression-string>
+        <expression-string>type[1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>list(map(str, AminoAcidType))</expression-string>
+        <expression-string>type[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>list(map(AminoAcidType))</expression-string>
+        <expression-string>type</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>type.value</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>list(AminoAcidType.value)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -449,13 +514,6 @@ Bond</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/enum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3330">
-          <caret line="223" selection-start-line="223" selection-end-line="223" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24855">
@@ -480,22 +538,24 @@ Bond</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/chemistry/bond.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/genetic-algorithms/gene.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1540137085837" expanded="true" signature="103:104" ph="..." />
+            <marker date="1540137085837" expanded="true" signature="103:105" ph="..." />
           </folding>
         </state>
       </provider>
@@ -512,17 +572,48 @@ Bond</expression-string>
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/enum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="567" selection-start-line="567" selection-end-line="567" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="751" selection-start-line="751" selection-end-line="751" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/common/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/chemistry/amino_acid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="111" column="115" selection-start-line="111" selection-start-column="115" selection-end-line="111" selection-end-column="115" />
+        <state relative-caret-position="291">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <marker date="1540093270476" expanded="true" signature="1008:1151" ph="..." />
-            <marker date="1540093270476" expanded="true" signature="1145:1146" ph="..." />
-            <marker date="1540093270476" expanded="true" signature="1188:1565" ph="..." />
-            <marker date="1540093270476" expanded="true" signature="1793:1799" ph="..." />
-            <marker date="1540093270476" expanded="true" signature="5501:5507" ph="..." />
+            <marker date="1540140229076" expanded="true" signature="2000:2143" ph="..." />
+            <marker date="1540140229076" expanded="true" signature="2137:2138" ph="..." />
+            <marker date="1540140229076" expanded="true" signature="2180:2557" ph="..." />
+            <marker date="1540140229076" expanded="true" signature="2785:2791" ph="..." />
+            <marker date="1540140229076" expanded="true" signature="6112:6118" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
