@@ -6,7 +6,8 @@ from modules.chemistry.atom import Atom
 class BondType(Enum):
     SINGLE = 1
     DOUBLE = 2
-    PEPTIDE = 1
+    TRIPLE = 3
+    PEPTIDE = 4
 
 
 class Bond:
