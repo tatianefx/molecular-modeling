@@ -1,5 +1,5 @@
 from modules.chemistry.bond import Bond
-from modules.common.helper import calculeAngleABC
+from modules.common.helper import calculates_angle_a_b_c
 
 
 class Gene:
@@ -13,5 +13,5 @@ class Gene:
         a = self.phi.first_atom.position
         b = self.phi.second_atom.position
         c = self.psi.second_atom.position
-        return calculeAngleABC(a, b, c)
+        return calculates_angle_a_b_c(a, b, c)
 

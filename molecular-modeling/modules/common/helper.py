@@ -1,7 +1,7 @@
 from math import sqrt, acos, pi
 
 
-def calculeDistanceAB(a, b):
+def calculates_distance_a_b(a, b):
     x = (a[0] - b[0])**2
     y = (a[1] - b[1])**2
     z = (a[2] - b[2])**2
@@ -9,7 +9,7 @@ def calculeDistanceAB(a, b):
     return sqrt(x + y + z)
 
 
-def calculeAngleABC(a, b, c):
+def calculates_angle_a_b_c(a, b, c):
     ab = [a[0] - b[0], a[1] - b[1], a[2] - b[2]]
     bc = [c[0] - b[0], c[1] - b[1], c[2] - b[2]]
 

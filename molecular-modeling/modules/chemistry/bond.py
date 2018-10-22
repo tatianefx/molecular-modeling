@@ -1,5 +1,5 @@
 from enum import Enum
-from modules.common.helper import calculeDistanceAB
+from modules.common.helper import calculates_distance_a_b
 from modules.chemistry.atom import Atom
 
 
@@ -16,5 +16,5 @@ class Bond:
         self.first_atom = first_atom
         self.second_atom = second_atom
         self.bond_type = bond_type
-        self.bond_lenght = calculeDistanceAB(first_atom.position, second_atom.position)
+        self.bond_length = calculates_distance_a_b(first_atom.position, second_atom.position)
 

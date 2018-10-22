@@ -1,5 +1,5 @@
 from modules.chemistry.bond import Bond
-from modules.chemistry.amino_acid import AminoAcid, AminoAcidType
+from modules.chemistry.amino_acid import AminoAcid
 
 
 class Molecule:

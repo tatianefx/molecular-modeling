@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f968f58-8d7e-4fb1-ace1-4d2f3088cfba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/common/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/genetic-algorithms/gene.py" afterDir="false" />
+    <list default="true" id="0f968f58-8d7e-4fb1-ace1-4d2f3088cfba" name="Default Changelist" comment="Beginning of the implementation of the genetic algorithm">
+      <change afterPath="$PROJECT_DIR$/modules/genetic_algorithms/genetic_algorithms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/genetic_algorithms/individual.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/chemistry/amino_acid.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chemistry/amino_acid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/chemistry/bond.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chemistry/bond.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/chemistry/molecule.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/chemistry/molecule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/common/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/common/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/common/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/common/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/genetic-algorithms/gene.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/genetic_algorithms/gene.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,37 +65,39 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="5" />
-          <entry key="py" value="1484" />
-          <entry key="txt" value="1" />
+          <entry key="dummy" value="32" />
+          <entry key="py" value="2561" />
+          <entry key="txt" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="1484" />
+          <entry key="PLAIN_TEXT" value="54" />
+          <entry key="Python" value="2561" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="4" />
+          <entry key="Python" value="7" />
+          <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="4" />
+          <entry key="py" value="7" />
+          <entry key="pyi" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="105">
+              <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -101,14 +106,44 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/genetic-algorithms/gene.py">
+        <entry file="file://$PROJECT_DIR$/modules/genetic_algorithms/gene.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="165">
+              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <marker date="1540137085837" expanded="true" signature="103:104" ph="..." />
-                <marker date="1540137085837" expanded="true" signature="103:105" ph="..." />
+                <marker date="1540143231133" expanded="true" signature="110:111" ph="..." />
+                <marker date="1540143231133" expanded="true" signature="110:112" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/genetic_algorithms/individual.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+              <folding>
+                <marker date="1540175449366" expanded="true" signature="68:69" ph="..." />
+                <marker date="1540175449366" expanded="true" signature="68:70" ph="..." />
+                <marker date="1540175449366" expanded="true" signature="326:335" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/genetic_algorithms/genetic_algorithms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#60#0" expanded="true" />
+                <marker date="1540175836953" expanded="true" signature="163:164" ph="..." />
+                <marker date="1540175836953" expanded="true" signature="163:165" ph="..." />
+                <marker date="1540175836953" expanded="true" signature="426:599" ph="..." />
+                <marker date="1540175836953" expanded="true" signature="1047:1437" ph="..." />
               </folding>
             </state>
           </provider>
@@ -126,8 +161,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/chemistry/amino_acid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="1980">
+              <caret line="132" selection-start-line="132" selection-end-line="132" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
                 <marker date="1540140229076" expanded="true" signature="2000:2143" ph="..." />
@@ -141,19 +176,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/common/amino_acids/Alanine.mol">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/chemistry/molecule.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="150">
+              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding>
                 <element signature="e#1#40#0" expanded="true" />
-                <marker date="1540091760502" expanded="true" signature="123:124" ph="..." />
-                <marker date="1540091760502" expanded="true" signature="123:125" ph="..." />
+                <marker date="1540142389214" expanded="true" signature="108:109" ph="..." />
+                <marker date="1540142389214" expanded="true" signature="108:110" ph="..." />
               </folding>
             </state>
           </provider>
@@ -162,8 +192,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/common/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -171,8 +201,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/chemistry/bond.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="270">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -183,8 +213,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/common/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="7" selection-start-column="7" selection-end-column="7" />
+            <state relative-caret-position="165">
+              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -212,12 +242,16 @@
         <option value="$PROJECT_DIR$/modules/utils/__init__.py" />
         <option value="$PROJECT_DIR$/modules/utils/__helper__.py" />
         <option value="$PROJECT_DIR$/modules/chemistry/atom.py" />
-        <option value="$PROJECT_DIR$/modules/chemistry/molecule.py" />
-        <option value="$PROJECT_DIR$/modules/chemistry/bond.py" />
-        <option value="$PROJECT_DIR$/modules/common/config.py" />
         <option value="$PROJECT_DIR$/modules/genetic-algorithms/gene.py" />
         <option value="$PROJECT_DIR$/modules/chemistry/amino_acid.py" />
+        <option value="$PROJECT_DIR$/modules/chemistry/molecule.py" />
+        <option value="$PROJECT_DIR$/modules/genetic-algorithms/individual.py" />
+        <option value="$PROJECT_DIR$/modules/common/helper.py" />
+        <option value="$PROJECT_DIR$/modules/genetic_algorithms/individual.py" />
         <option value="$PROJECT_DIR$/modules/__init__.py" />
+        <option value="$PROJECT_DIR$/modules/common/config.py" />
+        <option value="$PROJECT_DIR$/modules/chemistry/bond.py" />
+        <option value="$PROJECT_DIR$/modules/genetic_algorithms/genetic_algorithms.py" />
       </list>
     </option>
   </component>
@@ -260,14 +294,7 @@
               <item name="molecular-modeling" type="b2602c69:ProjectViewProjectNode" />
               <item name="molecular-modeling" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="amino_acids" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="molecular-modeling" type="b2602c69:ProjectViewProjectNode" />
-              <item name="molecular-modeling" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="genetic-algorithms" type="462c0819:PsiDirectoryNode" />
+              <item name="genetic_algorithms" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,6 +305,11 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/genetic" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -337,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540093396240</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix for UNKNOWN amino acid">
+      <created>1540140334590</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540140334590</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -353,13 +392,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17124736" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17124736" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3283767" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
@@ -377,7 +416,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Binding between amino acids" />
-    <option name="LAST_COMMIT_MESSAGE" value="Binding between amino acids" />
+    <MESSAGE value="Fix for UNKNOWN amino acid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix for UNKNOWN amino acid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -521,56 +561,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/chemistry/atom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/common/amino_acids/Alanine.mol">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/common/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/chemistry/bond.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/genetic-algorithms/gene.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <marker date="1540137085837" expanded="true" signature="103:104" ph="..." />
-            <marker date="1540137085837" expanded="true" signature="103:105" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/chemistry/molecule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#1#40#0" expanded="true" />
-            <marker date="1540091760502" expanded="true" signature="123:124" ph="..." />
-            <marker date="1540091760502" expanded="true" signature="123:125" ph="..." />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/enum.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -586,17 +578,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modules/common/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/builtins.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="632" column="64" selection-start-line="632" selection-start-column="64" selection-end-line="632" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/common/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/chemistry/atom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/chemistry/bond.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/genetic_algorithms/gene.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1540143231133" expanded="true" signature="110:111" ph="..." />
+            <marker date="1540143231133" expanded="true" signature="110:112" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/genetic_algorithms/individual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding>
+            <marker date="1540175449366" expanded="true" signature="68:69" ph="..." />
+            <marker date="1540175449366" expanded="true" signature="68:70" ph="..." />
+            <marker date="1540175449366" expanded="true" signature="326:335" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/chemistry/amino_acid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="1980">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <marker date="1540140229076" expanded="true" signature="2000:2143" ph="..." />
@@ -608,12 +665,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/__init__.py">
+    <entry file="file://$PROJECT_DIR$/modules/chemistry/molecule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="150">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#1#40#0" expanded="true" />
+            <marker date="1540142389214" expanded="true" signature="108:109" ph="..." />
+            <marker date="1540142389214" expanded="true" signature="108:110" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/genetic_algorithms/genetic_algorithms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+            <marker date="1540175836953" expanded="true" signature="163:164" ph="..." />
+            <marker date="1540175836953" expanded="true" signature="163:165" ph="..." />
+            <marker date="1540175836953" expanded="true" signature="426:599" ph="..." />
+            <marker date="1540175836953" expanded="true" signature="1047:1437" ph="..." />
           </folding>
         </state>
       </provider>
