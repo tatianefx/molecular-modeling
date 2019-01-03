@@ -164,5 +164,4 @@ class AminoAcid:
                 bonds.append(Bond(atoms[first_atom-1], atoms[second_atom-1], bond_type))
 
             return AminoAcid(atoms, bonds, type)
-        return None
 
