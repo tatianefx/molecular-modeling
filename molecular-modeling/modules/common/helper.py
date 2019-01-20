@@ -26,6 +26,12 @@ def calculates_angle_a_b_c(a, b, c):
     return acos(res) * 180.0 / pi
 
 
+# p1 = [-1.4105, 1.1507, 0.1821]
+# p2 = [-0.7085, -0.1136, 0.3937]
+# p3 = [0.7470, 0.0903, 0.0308]
+# p4 = [1.2492, 1.1165, -0.4047]
+# torsion_angle = calculates_torsion_angle(p1, p2, p3, p4)
+# print(torsion_angle)
 def calculates_torsion_angle(p1, p2, p3, p4):
     # Call calc_q_vectors(p1,p2,p3,p4) function
     q1, q2, q3 = calc_q_vectors(p1, p2, p3, p4)
