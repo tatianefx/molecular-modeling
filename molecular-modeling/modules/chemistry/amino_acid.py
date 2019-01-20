@@ -5,7 +5,7 @@ from modules.common.config import DIRECTORY_PATH
 import random
 
 
-ALPHABET = "ARNDCEQGHILKMFPSTWYVUOX"
+ALPHABET = "ARNDCEQGHILKMFPSTWYVUO"
 
 
 class AminoAcidType(Enum):
@@ -31,7 +31,8 @@ class AminoAcidType(Enum):
     VALINE = ('V', DIRECTORY_PATH + "Valine.mol")
     SELENOCYSTEINE = ('U', DIRECTORY_PATH + "Selenocysteine.mol")
     PYRROLYSINE = ('O', DIRECTORY_PATH + "Pyrrolysine.mol")
-    UNKNOWN = ('X', '')
+    # Removes unknown value in this version
+    # UNKNOWN = ('X', '')
 
     @staticmethod
     def list():
@@ -123,8 +124,9 @@ class AminoAcid:
             return AminoAcid.__get_amino_acid_by_path(AminoAcidType.SELENOCYSTEINE)
         elif amino_acid == AminoAcidType.PYRROLYSINE.value[0]:
             return AminoAcid.__get_amino_acid_by_path(AminoAcidType.PYRROLYSINE)
-        elif amino_acid == AminoAcidType.UNKNOWN.value[0]:
-            return AminoAcid.__get_amino_acid_by_path(AminoAcidType.random_choice())
+        # Removes unknown value in this version
+        # elif amino_acid == AminoAcidType.UNKNOWN.value[0]:
+        #     return AminoAcid.__get_amino_acid_by_path(AminoAcidType.random_choice())
         else:
             return
 
