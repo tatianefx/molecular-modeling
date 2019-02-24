@@ -5,7 +5,7 @@ class Individual:
 
     def __init__(self, chromosome: [Gene]):
         self.chromosome = chromosome
-        self.fitness = self.__calcule_fitness()
+        self.fitness = self.__calculates_fitness()
 
     def __calculates_fitness(self):
         # TODO Calculates the Gibbs free energy.

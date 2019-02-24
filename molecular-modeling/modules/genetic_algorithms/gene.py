@@ -9,6 +9,19 @@ class Gene:
         self.psi = psi
         self.bond_angle = self.__get_bond_angle()
 
+    """       
+                   A
+                  . 
+         phi ->  .  
+                .
+               .
+              B  ) bond angle
+               .
+                .
+         psi ->  .
+                  .
+                   C   
+    """
     def __get_bond_angle(self):
         a = self.phi.first_atom.position
         b = self.phi.second_atom.position
