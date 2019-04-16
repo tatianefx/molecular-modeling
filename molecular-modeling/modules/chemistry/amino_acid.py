@@ -1,10 +1,12 @@
 from enum import Enum
 from modules.chemistry.atom import Atom, AtomName
 from modules.chemistry.bond import Bond, BondType
-from modules.common.config import DIRECTORY_PATH
 import random
+import os
+dir_name = os.path.dirname(__file__)
 
 
+DIRECTORY_PATH = os.path.join(dir_name, 'amino_acids/')
 ALPHABET = "ARNDCEQGHILKMFPSTWYVUO"
 
 

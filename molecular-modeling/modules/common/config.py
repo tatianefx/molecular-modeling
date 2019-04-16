@@ -1,4 +1,8 @@
-DIRECTORY_PATH = "/Users/tatianefx/PycharmProjects/tcc-molecular-modeling/molecular-modeling/modules/common/amino_acids/"
+import os
+dirname = os.path.dirname(__file__)
+
+
+DIRECTORY_PATH = os.path.join(dirname, 'amino_acids/')
 
 # BOND DISTANCE IN ANGSTRON
 PEPTIDE_BOND_LENGTH = 1

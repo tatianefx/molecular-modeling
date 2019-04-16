@@ -115,5 +115,5 @@ dmypy.json
 .pyre/
 
 # Psi4
-/molecular-modeling/modules/output.dat
-/molecular-modeling/modules/timer.dat
+/modules/output.dat
+/modules/timer.dat
