@@ -1,4 +1,5 @@
 from math import sqrt, acos, pi
+from scipy.linalg import expm
 import numpy as np
 import math
 
@@ -33,6 +34,8 @@ def calculates_angle_a_b_c(a, b, c):
 # torsion_angle = calculates_torsion_angle(p1, p2, p3, p4)
 # print(torsion_angle)
 def calculates_torsion_angle(p1, p2, p3, p4):
+    """ Function to calculate the torsion angle """
+
     # Call calc_q_vectors(p1,p2,p3,p4) function
     q1, q2, q3 = calc_q_vectors(p1, p2, p3, p4)
     # Call calc_cross_vectors(q1,q2,q3) function
@@ -97,4 +100,19 @@ def calc_dihedral_angle(n1, u1, u2, u3):
     print("theta (deg) = %8.3f"%theta_deg)
 
     return theta_deg
+
+
+def rotation_euler(v, xyz):
+    """
+    # https://stackoverflow.com/questions/6802577/python-rotation-of-3d-vector
+    Rotate vector v (or array of vectors) by the euler angles xyz
+
+    :param v: vector or array of vectors
+    :param xyz: vector euler angles xyz
+    :return: vector or array of vectors
+    """
+
+    for theta, axis in zip(xyz, np.eye(3)):
+        v = np.dot(np.array(v), expm(np.cross(np.eye(3), axis*-theta)))
+    return v
 
