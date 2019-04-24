@@ -1,6 +1,7 @@
 from modules.genetic_algorithms.gene import Gene
 from modules.common.helper import rotation_euler
 import numpy as np
+import psi4
 
 
 class Individual:
@@ -10,9 +11,26 @@ class Individual:
         self.fitness = self.__calculates_fitness()
 
     def __calculates_fitness(self):
-        # TODO Calculates the Gibbs free energy.
+        geometry = ""
 
-        return 0.0
+        for item in self.chromosome:
+            for atom in item.atoms:
+                if geometry != "":
+                    geometry = geometry + '\n'
+                geometry = geometry + atom.acronym.value + ' '
+                geometry = geometry + str("%.4f" % atom.position[0]) + ' '
+                geometry = geometry + str("%.4f" % atom.position[1]) + ' '
+                geometry = geometry + str("%.4f" % atom.position[2])
+
+        psi4.core.set_output_file('output.dat', False)
+        psi4.set_memory('500 MB')
+
+        psi4.geometry(geometry)
+
+        psi4.energy('scf/cc-pvdz')
+        total_energy = psi4.core.get_variable('SCF TOTAL ENERGY')
+
+        return total_energy
 
     def mutate(self):
         # get 3D position
