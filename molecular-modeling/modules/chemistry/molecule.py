@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = "tatianefx"
+
 from modules.chemistry.bond import Bond
 from modules.chemistry.amino_acid import AminoAcid
 

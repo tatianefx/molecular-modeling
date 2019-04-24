@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = "tatianefx"
+
 from modules.chemistry.bond import Bond
 from modules.common.helper import calculates_angle_a_b_c
 

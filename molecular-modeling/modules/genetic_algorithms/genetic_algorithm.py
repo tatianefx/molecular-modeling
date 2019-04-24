@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = "tatianefx"
+
 from modules.genetic_algorithms.individual import Individual
 from modules.common.config import POPULATION_SIZE, GENERATIONS
 import random

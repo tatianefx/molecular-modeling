@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = "tatianefx"
+
 from enum import Enum
 from modules.common.helper import calculates_distance_a_b
 from modules.chemistry.atom import Atom

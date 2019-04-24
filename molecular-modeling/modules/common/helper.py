@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = "tatianefx"
+
 from math import sqrt, acos, pi
 from scipy.linalg import expm
 import numpy as np

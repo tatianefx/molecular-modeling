@@ -1,7 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = "tatianefx"
+
 import os
+
 dirname = os.path.dirname(__file__)
-
-
 DIRECTORY_PATH = os.path.join(dirname, 'amino_acids/')
 
 # BOND DISTANCE IN ANGSTRON
