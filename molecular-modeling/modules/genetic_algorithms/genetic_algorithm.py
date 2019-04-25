@@ -10,10 +10,12 @@ import random
 
 class GeneticAlgorithm:
 
+    the_best_individual: Individual
+
     def __init__(self, individual: Individual):
         self.first_individual = individual
         self.population = self.__generate_population()
-        self.__run_genetic_algorithm()
+        self.the_best_individual = self.__run_genetic_algorithm()
 
     def __run_genetic_algorithm(self):
         for i in range(GENERATIONS):
@@ -26,7 +28,7 @@ class GeneticAlgorithm:
     def __generate_population(self):
         population = []
         for i in range(POPULATION_SIZE*2):
-            individual = self.first_individual
+            individual = Individual(self.first_individual)
             individual.mutate()
             population.append(individual)
         return population
