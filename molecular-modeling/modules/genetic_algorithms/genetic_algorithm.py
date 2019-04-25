@@ -14,32 +14,34 @@ class GeneticAlgorithm:
 
     def __init__(self, individual: Individual):
         self.first_individual = individual
-        self.population = self.__generate_population()
+        self.population = self.__generates_population()
         self.the_best_individual = self.__run_genetic_algorithm()
 
     def __run_genetic_algorithm(self):
         for i in range(GENERATIONS):
+            print("\nGENERATION " + str(i))
             self.__select_population()
             self.__crossover()
             self.__mutate()
         self.__select_population()
         return self.population[0]
 
-    def __generate_population(self):
+    def __generates_population(self):
+        print("\nGenerates Population\n")
         population = []
-        for i in range(POPULATION_SIZE*2):
+        for i in range(POPULATION_SIZE):
             individual = Individual(self.first_individual)
             individual.mutate()
             population.append(individual)
         return population
 
     def __select_population(self):
-        self.population.sort(key=lambda x: x.fitness, reverse=True)
+        self.population = sorted(self.population, key=lambda x: x.fitness)
         del self.population[POPULATION_SIZE:]
 
     def __crossover(self):
         offsprings = []
-        for i in range(0, POPULATION_SIZE, 2):
+        for i in range(0, POPULATION_SIZE-1, 2):
             offspring = self.__uniform_crossover(self.population[i], self.population[i+1])
             offsprings.append(offspring)
         self.population = self.population + offsprings

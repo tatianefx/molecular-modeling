@@ -119,5 +119,5 @@ def rotation_euler(v, xyz):
 
     for theta, axis in zip(xyz, np.eye(3)):
         v = np.dot(np.array(v), expm(np.cross(np.eye(3), axis*-theta)))
-    return v
+    return v.tolist()
 

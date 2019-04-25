@@ -1,6 +1,5 @@
 from modules.genetic_algorithms.gene import Gene
 from modules.common.helper import rotation_euler
-import numpy as np
 import psi4
 
 
@@ -34,28 +33,33 @@ class Individual:
 
     def mutate(self):
         # get 3D position
-        geometry = np.ndarray()
+        geometry = []
 
         peptide = self.chromosome
         for item in peptide:
             for atom in item.atoms:
-                geometry += atom.position
+                geometry.append(atom.position)
 
         # split at random position
-        parts = np.split(geometry, 2)
+
+        first_part = geometry[0:int(len(geometry)/2)]
+        second_part = geometry[int(len(geometry)/2):len(geometry)]
 
         # move positions
-        new_part = rotation_euler(parts[1], [0, 0, 1])
+        new_part = rotation_euler(second_part, [0, 0, 1])
 
         # update geometry
-        geometry = parts[0] + new_part
+        geometry.clear()
+        geometry += first_part
+        geometry += new_part
 
         for item in peptide:
-            for atom in item.atoms:
-                atom.position = geometry[atom.index(atom.position)]
+            for i in range(0, len(item.atoms)):
+                item.atoms[i].position = geometry[i]
 
         # calculate fitness
         self.fitness = self.__calculates_fitness()
+        print("Fitness: " + str(self.fitness))
 
     def __write3d(self):
         str = ""
