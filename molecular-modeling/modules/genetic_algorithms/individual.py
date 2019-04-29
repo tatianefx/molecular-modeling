@@ -21,13 +21,17 @@ class Individual:
                 geometry = geometry + str("%.4f" % atom.position[1]) + ' '
                 geometry = geometry + str("%.4f" % atom.position[2])
 
-        psi4.core.set_output_file('output.dat', False)
-        psi4.set_memory('500 MB')
+        total_energy = 0
+        try:
+            psi4.core.set_output_file('output.dat', False)
+            psi4.set_memory('500 MB')
 
-        psi4.geometry(geometry)
+            psi4.geometry(geometry)
 
-        psi4.energy('scf/cc-pvdz')
-        total_energy = psi4.core.get_variable('SCF TOTAL ENERGY')
+            psi4.energy('scf/cc-pvdz')
+            total_energy = psi4.core.get_variable('SCF TOTAL ENERGY')
+        except ValueError:
+            print(ValueError.args)
 
         return total_energy
 

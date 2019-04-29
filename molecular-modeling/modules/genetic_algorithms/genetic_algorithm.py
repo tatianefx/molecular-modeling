@@ -36,19 +36,18 @@ class GeneticAlgorithm:
         return population
 
     def __select_population(self):
-        self.population = sorted(self.population, key=lambda x: x.fitness)
-        del self.population[POPULATION_SIZE:]
+        self.population.sort(key=lambda x: x.fitness)
 
     def __crossover(self):
         offsprings = []
         for i in range(0, POPULATION_SIZE-1, 2):
             offspring = self.__uniform_crossover(self.population[i], self.population[i+1])
             offsprings.append(offspring)
-        self.population = self.population + offsprings
+        self.population += offsprings
 
     def __mutate(self):
         for i in range(len(self.population)):
-            self.population[i] = self.population[i].mutate()
+            self.population[i].mutate()
 
     @staticmethod
     def __uniform_crossover(parent_a: Individual, parent_b: Individual):
