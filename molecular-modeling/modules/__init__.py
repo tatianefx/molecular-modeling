@@ -6,6 +6,7 @@ __author__ = "tatianefx"
 from modules.chemistry.molecule import Molecule
 from modules.chemistry.amino_acid import AminoAcid, Atom
 from modules.genetic_algorithms.genetic_algorithm import GeneticAlgorithm
+import sys
 
 amino_acid = input("Digite uma sequência de aminoácidos: ")
 if AminoAcid.is_valid(amino_acid):
@@ -14,3 +15,4 @@ if AminoAcid.is_valid(amino_acid):
     print(genetic.the_best_individual.fitness)
 
 print("THE END")
+sys.exit(0)
