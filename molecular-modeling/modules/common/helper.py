@@ -121,3 +121,58 @@ def rotation_euler(v, xyz):
         v = np.dot(np.array(v), expm(np.cross(np.eye(3), axis*-theta)))
     return v.tolist()
 
+
+def translation(m, xyz):
+    result = []
+    for v in m:
+        v[0] = v[0] + xyz[0]
+        v[1] = v[1] + xyz[1]
+        v[2] = v[2] + xyz[2]
+        result.append(v)
+
+    return result
+
+
+def vector_result(a, b):
+    ab = [a[0] - b[0], a[1] - b[1], a[2] - b[2]]
+    return ab
+
+
+def vector_result_with_distance(a, b, distance):
+    # m1 = [
+    #     [-1, -1, 0],
+    #     [0, 0, 0],
+    #     [1, 1, 0]
+    # ]
+    #
+    # m2 = [
+    #     [0, -2, 0],
+    #     [1, -1, 0],
+    #     [2, 0, 0]
+    # ]
+    #
+    # v = vector_result_with_distance(m1[2], m2[0], 1)
+    # print(v)
+    #
+    # m = translation(m2, v)
+    # print(m)
+    #
+    # >> [2, 4, 0]
+    # >> [[2, 2, 0], [3, 3, 0], [4, 4, 0]]
+
+    v = vector_result(a, b)
+
+    a[0] = a[0] * distance
+    a[1] = a[1] * distance
+    a[2] = a[2] * distance
+
+    v[0] = v[0] + a[0]
+    v[1] = v[1] + a[1]
+    v[2] = v[2] + a[2]
+
+    return v
+
+
+
+
+
