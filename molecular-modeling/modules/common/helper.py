@@ -107,6 +107,16 @@ def calc_dihedral_angle(n1, u1, u2, u3):
     return theta_deg
 
 
+def calculates_xyz_to_rotate(a, b):
+    ab = [a[0] - b[0], a[1] - b[1], a[2] - b[2]]
+
+    ab_vec = sqrt(ab[0] * ab[0] + ab[1] * ab[1] + ab[2] * ab[2])
+
+    ab_norm = [ab[0] / ab_vec, ab[1] / ab_vec, ab[2] / ab_vec]
+
+    return ab_norm
+
+
 def rotation_euler(v, xyz):
     """
     # https://stackoverflow.com/questions/6802577/python-rotation-of-3d-vector
@@ -133,12 +143,12 @@ def translation(m, xyz):
     return result
 
 
-def vector_result(a, b):
+def resulting_vector(a, b):
     ab = [a[0] - b[0], a[1] - b[1], a[2] - b[2]]
     return ab
 
 
-def vector_result_with_distance(a, b, distance):
+def resulting_vector_with_distance(a, b, distance):
     # m1 = [
     #     [-1, -1, 0],
     #     [0, 0, 0],
@@ -160,7 +170,7 @@ def vector_result_with_distance(a, b, distance):
     # >> [2, 4, 0]
     # >> [[2, 2, 0], [3, 3, 0], [4, 4, 0]]
 
-    v = vector_result(a, b)
+    v = resulting_vector(a, b)
 
     a[0] = a[0] * distance
     a[1] = a[1] * distance

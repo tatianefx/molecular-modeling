@@ -6,7 +6,7 @@ __author__ = "tatianefx"
 from modules.chemistry.bond import Bond
 from modules.chemistry.atom import Atom
 from modules.chemistry.amino_acid import AminoAcid
-from modules.common.helper import translation, vector_result_with_distance
+from modules.common.helper import translation, resulting_vector_with_distance
 from modules.common.config import PEPTIDE_BOND_LENGTH
 
 
@@ -37,7 +37,7 @@ class Molecule:
         for atom in amino_acid.atoms:
             matrix.append(atom.position)
 
-        v = vector_result_with_distance(atom_a.position, matrix[0], PEPTIDE_BOND_LENGTH)
+        v = resulting_vector_with_distance(atom_a.position, matrix[0], PEPTIDE_BOND_LENGTH)
 
         result = translation(matrix, v)
 
