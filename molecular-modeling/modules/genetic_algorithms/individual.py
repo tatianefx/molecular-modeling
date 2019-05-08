@@ -33,6 +33,7 @@ class Individual:
             psi4.energy('scf/cc-pvdz')
             total_energy = psi4.core.get_variable('SCF TOTAL ENERGY')
         except RuntimeError:
+            # Iterations did not converge.
             pass
 
         return total_energy
