@@ -9,10 +9,11 @@ dirname = os.path.dirname(__file__)
 DIRECTORY_PATH = os.path.join(dirname, 'amino_acids/')
 
 """
-'Typically the peptide bond(C-N) has a length of 1.32 to 1.33 Å.'
+'It is clear that the bond length for the peptide bond(1.32Å) is shorter than that for the single N-C bond(1.45Å).
 
-Advanced Biotechnology by R C Dubey
-https://books.google.com.br/books?id=SKgrDAAAQBAJ&pg=PA457&lpg=PA457&dq=peptide+bond+is+typically+1.32&source=bl&ots=FPMGytIfNn&sig=ACfU3U3_949XhtXwkLUurCSbD4kKWGozKw&hl=pt-BR&sa=X&ved=2ahUKEwjD6bH88oniAhUFGbkGHbdHAoMQ6AEwC3oECAkQAQ#v=onepage&q=peptide%20bond%20is%20typically%201.32&f=false
+Exploring Protein Structure: Principles and Practice
+by Tim Skern
+https://books.google.com.br/books?id=lQtjDwAAQBAJ&pg=PA63&dq=peptide+bond+length+1.32&hl=pt-BR&sa=X&ved=0ahUKEwiL1-zDioziAhUlLLkGHdIjDTMQ6AEIKTAA#v=onepage&q=peptide%20bond%20length%201.32&f=false
 """
 # BOND DISTANCE IN ANGSTRON
 PEPTIDE_BOND_LENGTH = 1.32
