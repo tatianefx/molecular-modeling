@@ -1,11 +1,13 @@
-from modules.genetic_algorithms.gene import Gene
+from modules.chemistry.amino_acid import AminoAcid
 from modules.common.helper import rotation_euler
+from modules.common.helper import calculates_xyz_to_rotate
+from modules.common.helper import calculates_angle_a_b_c
 import psi4
 
 
 class Individual:
 
-    def __init__(self, chromosome: [Gene]):
+    def __init__(self, chromosome: [AminoAcid]):
         self.chromosome = chromosome
         self.fitness = self.__calculates_fitness()
 
@@ -21,6 +23,7 @@ class Individual:
                 geometry = geometry + str("%.4f" % atom.position[1]) + ' '
                 geometry = geometry + str("%.4f" % atom.position[2])
 
+        # print(geometry + '\n')
         total_energy = 0
         try:
             psi4.core.set_output_file('output.dat', False)
@@ -37,34 +40,35 @@ class Individual:
         return total_energy
 
     def mutate(self):
-        # get 3D position
-        geometry = []
+        second_part = []
 
-        peptide = self.chromosome
-        for item in peptide:
-            for atom in item.atoms:
-                geometry.append(atom.position)
+        for atom in self.chromosome[1].atoms:
+            second_part.append(atom.position)
 
-        # split at random position
+        a = self.chromosome[0].atoms[-2].position
+        b = self.chromosome[0].atoms[-1].position
+        c = second_part[0]
+        before = calculates_angle_a_b_c(a, b, c)
+        print('Angle before:' + str(before))
 
-        first_part = geometry[0:int(len(geometry)/2)]
-        second_part = geometry[int(len(geometry)/2):len(geometry)]
+        # calculates resulting vector
+        v = calculates_xyz_to_rotate(self.chromosome[0].atoms[-2].position, self.chromosome[0].atoms[-1].position)
 
         # move positions
-        new_part = rotation_euler(second_part, [0, 0, 1])
+        new_part = rotation_euler(second_part, v)
 
-        # update geometry
-        geometry.clear()
-        geometry += first_part
-        geometry += new_part
+        a = self.chromosome[0].atoms[-2].position
+        b = self.chromosome[0].atoms[-1].position
+        c = new_part[0]
+        after = calculates_angle_a_b_c(a, b, c)
+        print('Angle after:' + str(after))
 
-        for item in peptide:
-            for i in range(0, len(item.atoms)):
-                item.atoms[i].position = geometry[i]
+        for i in range(len(self.chromosome[1].atoms)):
+            self.chromosome[1].atoms[i].position = new_part[i]
 
         # calculate fitness
         self.fitness = self.__calculates_fitness()
-        print("Fitness: " + str(self.fitness))
+        print('Fitness: ' + str(self.fitness) + '\n')
 
     def __write3d(self):
         str = ""

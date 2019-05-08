@@ -60,8 +60,14 @@ class AminoAcid:
     def eliminate_hydroxyl_radical(self):
         bond = self.bonds[0]
         carbon = bond.second_atom
+
+        self.atoms.remove(bond.first_atom)
         del self.bonds[0]
+
+        bond = self.bonds[0]
+        self.atoms.remove(bond.second_atom)
         del self.bonds[0]
+
         return carbon
 
     def eliminate_hydrogen(self, carbon):
@@ -69,11 +75,12 @@ class AminoAcid:
             first_atom = bond.first_atom
             second_atom = bond.second_atom
             if first_atom.acronym == AtomName.N and second_atom.acronym == AtomName.H:
+                atom_to_remove = bond.second_atom
                 bond.second_atom = carbon
                 bond.bond_type = BondType.PEPTIDE
                 self.bonds[i] = bond
+                self.atoms.remove(atom_to_remove)
                 break
-
 
     @staticmethod
     def is_valid(amino_acid_sequence):
