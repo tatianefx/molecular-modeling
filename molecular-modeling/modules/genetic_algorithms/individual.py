@@ -1,6 +1,7 @@
 from modules.chemistry.amino_acid import AminoAcid
 from modules.common.helper import rotation_euler
 from modules.common.helper import calculates_xyz_to_rotate
+from functools import reduce
 import psi4
 
 
@@ -39,19 +40,30 @@ class Individual:
         return total_energy
 
     def mutate(self):
-        second_part = []
+        for i in range(len(self.chromosome)):
+            first_part = self.chromosome[:i+1]
+            second_part = self.chromosome[i+1:]
 
-        for atom in self.chromosome[1].atoms:
-            second_part.append(atom.position)
+            items = reduce(lambda x, y: x+y, second_part)
+            part_to_rotate = []
+            for item in items:
+                for atom in item.atoms:
+                    part_to_rotate = atom.position
 
-        # calculates resulting vector
-        v = calculates_xyz_to_rotate(self.chromosome[0].atoms[-1].position, self.chromosome[1].atoms[0].position)
+            # calculates resulting vector
+            v = calculates_xyz_to_rotate(first_part[-1].atoms[-1].position, part_to_rotate[0])
 
-        # move positions
-        new_part = rotation_euler(second_part, v)
+            # move positions
+            new_part = rotation_euler(part_to_rotate, v)
 
-        for i in range(len(self.chromosome[1].atoms)):
-            self.chromosome[1].atoms[i].position = new_part[i]
+            # update values
+            for j in range(len(second_part)):
+                for k in range(len(second_part[j])):
+                    (second_part[j])[k] = new_part[0]
+                    del new_part[0]
+
+            # update origin
+            self.chromosome[i + 1:] = second_part
 
         # calculate fitness
         self.fitness = self.__calculates_fitness()

@@ -37,6 +37,10 @@ class GeneticAlgorithm:
 
     def __select_population(self):
         self.population.sort(key=lambda x: x.fitness)
+        if len(self.population) > POPULATION_SIZE:
+            # remove the two worst
+            del self.population[-1]
+            del self.population[-1]
 
     def __crossover(self):
         offsprings = []

@@ -14,7 +14,7 @@ amino_acid = input("Digite uma sequência de aminoácidos: ")
 if AminoAcid.is_valid(amino_acid):
     peptide = Molecule.generate_peptide_molecule(amino_acid)
     genetic = GeneticAlgorithm(peptide)
-    print('\n\nThe best fitness: ' + genetic.the_best_individual.fitness)
+    print("\n\nThe best fitness: " + str(genetic.the_best_individual.fitness))
 
 
 # Ala-Gly     Total Energy = -528.7141214969851717
