@@ -15,6 +15,8 @@ if AminoAcid.is_valid(amino_acid):
     peptide = Molecule.generate_peptide_molecule(amino_acid)
     genetic = GeneticAlgorithm(peptide)
     print("\n\nThe best fitness: " + str(genetic.the_best_individual.fitness))
+    print("\nThe best geometry:\n")
+    print(genetic.the_best_individual.geometry)
 
 
 # Ala-Gly     Total Energy = -528.7141214969851717
@@ -39,6 +41,33 @@ if AminoAcid.is_valid(amino_acid):
 # "H  4.1724  0.1652 -0.1968\n" \
 # "H  3.3017  0.5174  1.1303\n" \
 # "H -2.4226 -1.9313  0.7797\n"
+
+# Gly-Gly-Gly   Total Energy = -696.5010784885544126
+#
+# geometry = "O -0.5150  1.1856  1.3202\n" \
+# "O  1.9894 -1.0724 -0.8496\n" \
+# "O -2.1156 -1.5861 -0.2908\n" \
+# "O -4.2185 -1.2858  0.5064\n" \
+# "N  1.8723  1.0949 -0.0233\n" \
+# "N -1.6468  0.9523 -0.6943\n" \
+# "N  4.5348 -1.3138  0.1518\n" \
+# "C  0.6922  1.5116 -0.7467\n" \
+# "C -0.5295  1.1952  0.0913\n" \
+# "C -2.9510  0.6534 -0.1472\n" \
+# "C  2.4263 -0.1719 -0.1363\n" \
+# "C  3.6374 -0.3407  0.7580\n" \
+# "C -3.1761 -0.8222  0.0606\n" \
+# "H  0.7472  2.5920 -0.9060\n" \
+# "H  0.6550  0.9970 -1.7116\n" \
+# "H  2.2885  1.7640  0.6178\n" \
+# "H -1.5581  0.9766 -1.7060\n" \
+# "H -3.6937  1.0238 -0.8593\n" \
+# "H -3.0622  1.1616  0.8151\n" \
+# "H  3.3036 -0.6891  1.7400\n" \
+# "H  4.1647  0.6096  0.8860\n" \
+# "H  4.8156 -0.9965 -0.7752\n" \
+# "H  4.0483 -2.1996  0.0196\n" \
+# "H -2.2864 -2.5410 -0.1453\n" \
 #
 # try:
 #     psi4.core.set_output_file('output.dat', False)

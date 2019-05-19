@@ -10,6 +10,7 @@ class Individual:
     def __init__(self, chromosome: [AminoAcid]):
         self.chromosome = chromosome
         self.fitness = self.__calculates_fitness()
+        self.geometry = ''
 
     def __calculates_fitness(self):
         geometry = ""
@@ -24,6 +25,7 @@ class Individual:
                 geometry = geometry + str("%.4f" % atom.position[2])
 
         # print(geometry + '\n')
+        self.geometry = geometry
         total_energy = 0
         try:
             psi4.core.set_output_file('output.dat', False)
@@ -40,15 +42,22 @@ class Individual:
         return total_energy
 
     def mutate(self):
-        for i in range(len(self.chromosome)):
-            first_part = self.chromosome[:i+1]
-            second_part = self.chromosome[i+1:]
+        if len(self.chromosome) == 1:
+            return
 
-            items = reduce(lambda x, y: x+y, second_part)
+        for i in range(1, len(self.chromosome)):
+            first_part: list = self.chromosome[:i]
+            second_part: list = self.chromosome[i:]
+
             part_to_rotate = []
-            for item in items:
-                for atom in item.atoms:
-                    part_to_rotate = atom.position
+            if len(second_part) == 1:
+                items = reduce(lambda x, y: x + y, second_part)
+                for atom in items.atoms:
+                    part_to_rotate.append(atom.position)
+            else:
+                items = reduce(lambda x, y: x.atoms + y.atoms, second_part)
+                for atom in items:
+                    part_to_rotate.append(atom.position)
 
             # calculates resulting vector
             v = calculates_xyz_to_rotate(first_part[-1].atoms[-1].position, part_to_rotate[0])
@@ -56,14 +65,11 @@ class Individual:
             # move positions
             new_part = rotation_euler(part_to_rotate, v)
 
-            # update values
+            # update values by reference
             for j in range(len(second_part)):
-                for k in range(len(second_part[j])):
-                    (second_part[j])[k] = new_part[0]
+                for k in range(len(second_part[j].atoms)):
+                    second_part[j].atoms[k].position = new_part[0]
                     del new_part[0]
-
-            # update origin
-            self.chromosome[i + 1:] = second_part
 
         # calculate fitness
         self.fitness = self.__calculates_fitness()
