@@ -15,7 +15,7 @@ class Individual:
 
     def __calculates_fitness(self):
         geometry = ""
-        randomNumber = randint(1, 100)
+        random_number = randint(1, 100)
 
         for item in self.chromosome:
             for atom in item.atoms:
@@ -30,7 +30,7 @@ class Individual:
         self.geometry = geometry
         total_energy = 0
         try:
-            psi4.core.set_output_file('output'+str(randomNumber)+'.dat', False)
+            psi4.core.set_output_file('output'+str(random_number)+'.dat', False)
             psi4.set_memory('500 MB')
 
             psi4.geometry(geometry)
