@@ -9,6 +9,24 @@ import numpy as np
 import math
 
 
+def calculates_unit_norm(v):
+    x = v[0]**2
+    y = v[1]**2
+    z = v[2]**2
+
+    return sqrt(x + y + z)
+
+
+def normalize_vector(v):
+    c = calculates_unit_norm(v)
+
+    x = v[0]/c
+    y = v[1]/c
+    z = v[2]/c
+
+    return [x, y, z]
+
+
 def calculates_distance_a_b(a, b):
     x = (a[0] - b[0])**2
     y = (a[1] - b[1])**2
@@ -172,13 +190,9 @@ def resulting_vector_with_distance(a, b, distance):
 
     v = resulting_vector(a, b)
 
-    a[0] = a[0] * distance
-    a[1] = a[1] * distance
-    a[2] = a[2] * distance
-
-    v[0] = v[0] + a[0]
-    v[1] = v[1] + a[1]
-    v[2] = v[2] + a[2]
+    v[0] = (a[0] - v[0]) + distance
+    v[1] = (a[1] - v[1]) + distance
+    v[2] = (a[2] - v[2]) + distance
 
     return v
 
