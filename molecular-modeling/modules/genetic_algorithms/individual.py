@@ -4,14 +4,29 @@ from modules.common.helper import calculates_xyz_to_rotate
 from functools import reduce
 import psi4
 from random import randint
+import numpy as np
 
 
 class Individual:
 
     def __init__(self, chromosome: [AminoAcid]):
         self.chromosome = chromosome
-        self.fitness = self.__calculates_fitness()
+        self.fitness = 0
         self.geometry = ''
+
+    def matrix_3d(self):
+        matrix = []
+        for item in self.chromosome:
+            for atom in item.atoms:
+                matrix.append(atom.position)
+
+    def matrix_2d(self):
+        matrix = []
+        for item in self.chromosome:
+            for atom in item.atoms:
+                matrix.append(atom.position)
+        a = np.array(matrix)
+        a.reshape(-1, 2)
 
     def __calculates_fitness(self):
         geometry = ""
@@ -48,8 +63,8 @@ class Individual:
             return
 
         for i in range(1, len(self.chromosome)):
-            first_part: list = self.chromosome[:i]
-            second_part: list = self.chromosome[i:]
+            first_part: [AminoAcid] = self.chromosome[:i]
+            second_part: [AminoAcid] = self.chromosome[i:]
 
             part_to_rotate = []
             if len(second_part) == 1:
@@ -57,7 +72,12 @@ class Individual:
                 for atom in items.atoms:
                     part_to_rotate.append(atom.position)
             else:
-                items = reduce(lambda x, y: x.atoms + y.atoms, second_part)
+                atoms = []
+                for x in second_part:
+                    atoms.append(x.atoms)
+
+                items = reduce(lambda x, y: x + y, atoms)
+
                 for atom in items:
                     part_to_rotate.append(atom.position)
 

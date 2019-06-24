@@ -151,14 +151,12 @@ def rotation_euler(v, xyz):
 
 
 def translation(m, xyz):
-    result = []
     for v in m:
         v[0] = v[0] + xyz[0]
         v[1] = v[1] + xyz[1]
         v[2] = v[2] + xyz[2]
-        result.append(v)
 
-    return result
+    return m
 
 
 def resulting_vector(a, b):
