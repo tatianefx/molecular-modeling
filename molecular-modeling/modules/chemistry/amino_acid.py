@@ -34,9 +34,12 @@ class AminoAcidType(Enum):
     TRYPTOPHAN = ('W', DIRECTORY_PATH + "Tryptophan.mol")
     TYROSINE = ('Y', DIRECTORY_PATH + "Tyrosine.mol")
     VALINE = ('V', DIRECTORY_PATH + "Valine.mol")
-    SELENOCYSTEINE = ('U', DIRECTORY_PATH + "Selenocysteine.mol")
-    PYRROLYSINE = ('O', DIRECTORY_PATH + "Pyrrolysine.mol")
-    # Removes unknown value in this version
+    """ Two additional amino acids are in some species coded for by codons that 
+    are usually interpreted as stop codons:
+    Removes U and O values in this version"""
+    # SELENOCYSTEINE = ('U', DIRECTORY_PATH + "Selenocysteine.mol")
+    # PYRROLYSINE = ('O', DIRECTORY_PATH + "Pyrrolysine.mol")
+    """ Removes unknown value in this version """
     # UNKNOWN = ('X', '')
 
     @staticmethod
