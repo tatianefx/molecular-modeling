@@ -3,32 +3,30 @@
 
 __author__ = "tatianefx"
 
-# from modules.chemistry.molecule import Molecule
-# from modules.chemistry.amino_acid import AminoAcid, Atom
-# from modules.genetic_algorithms.genetic_algorithm import GeneticAlgorithm
+from modules.chemistry.molecule import Molecule
+from modules.chemistry.amino_acid import AminoAcid, Atom
+from modules.genetic_algorithms.genetic_algorithm import GeneticAlgorithm
 from modules.common.helper import normalize_vector
 import sys
 import psi4
-# import timeit
-from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
 import numpy as np
-from scipy import stats
-import pandas as pd
-from pandas.tools.plotting import scatter_matrix
 
-# amino_acid = input("Enter an amino acid sequence: ")
 
-# start = timeit.default_timer()
+""" Molecular Modelling """
 
-# if AminoAcid.is_valid(amino_acid):
-#     peptide = Molecule.generate_peptide_molecule(amino_acid)
-#     genetic = GeneticAlgorithm(peptide)
-#     print("\n\nThe best fitness: " + str(genetic.the_best_individual.fitness))
-#     print("\nThe best geometry:\n")
-#     print(genetic.the_best_individual.geometry)
-#     matrix = genetic.the_best_individual.matrix_2d()
+amino_acid = input("Enter an amino acid sequence: ")
 
+if AminoAcid.is_valid(amino_acid):
+    peptide = Molecule.generate_peptide_molecule(amino_acid)
+    genetic = GeneticAlgorithm(peptide)
+    print("\n\nThe best fitness: " + str(genetic.the_best_individual.fitness))
+    print("\nThe best geometry:\n")
+    print(genetic.the_best_individual.geometry)
+    matrix = genetic.the_best_individual.matrix_2d()
+
+# ============================================
+
+""" Energy references """
 
 # Ala-Gly     Total Energy = -528.7141214969851717
 
@@ -53,35 +51,8 @@ from pandas.tools.plotting import scatter_matrix
 # "H  3.3017  0.5174  1.1303\n" \
 # "H -2.4226 -1.9313  0.7797\n"
 
-# Gly-Gly-Gly   Total Energy = -696.5010784885544126
-#
-# geometry = "O -0.5150  1.1856  1.3202\n" \
-# "O  1.9894 -1.0724 -0.8496\n" \
-# "O -2.1156 -1.5861 -0.2908\n" \
-# "O -4.2185 -1.2858  0.5064\n" \
-# "N  1.8723  1.0949 -0.0233\n" \
-# "N -1.6468  0.9523 -0.6943\n" \
-# "N  4.5348 -1.3138  0.1518\n" \
-# "C  0.6922  1.5116 -0.7467\n" \
-# "C -0.5295  1.1952  0.0913\n" \
-# "C -2.9510  0.6534 -0.1472\n" \
-# "C  2.4263 -0.1719 -0.1363\n" \
-# "C  3.6374 -0.3407  0.7580\n" \
-# "C -3.1761 -0.8222  0.0606\n" \
-# "H  0.7472  2.5920 -0.9060\n" \
-# "H  0.6550  0.9970 -1.7116\n" \
-# "H  2.2885  1.7640  0.6178\n" \
-# "H -1.5581  0.9766 -1.7060\n" \
-# "H -3.6937  1.0238 -0.8593\n" \
-# "H -3.0622  1.1616  0.8151\n" \
-# "H  3.3036 -0.6891  1.7400\n" \
-# "H  4.1647  0.6096  0.8860\n" \
-# "H  4.8156 -0.9965 -0.7752\n" \
-# "H  4.0483 -2.1996  0.0196\n" \
-# "H -2.2864 -2.5410 -0.1453\n" \
-
 # Ala-Gly-Ser Total Energy = -849.4371377028904
-
+#
 # geometry =  "O -2.4488 -2.2878 -0.0662\n" \
 #    "O  0.0028  1.2407 -1.2777\n" \
 #    "O -4.8271  0.7290 -0.4805\n" \
@@ -114,6 +85,9 @@ from pandas.tools.plotting import scatter_matrix
 #    "H -3.3202 -2.2775  0.3645\n" \
 #    "H -5.6499  0.8241  0.0453"
 
+
+# Ala-Gly-Ser-Glu   Total Energy = -1321.9687202425043
+#
 # geometry = "O  1.0081   -0.5551   -1.8575\n" \
 #   "O -0.6789   -2.7971    0.2603\n" \
 #   "O  5.4836   -2.3478   -0.3523\n" \
@@ -176,7 +150,7 @@ from pandas.tools.plotting import scatter_matrix
 
 # ============================================
 
-# Normalize Matrix
+""" Normalize Matrix """
 
 # matrix = [[ 1.2492,  1.1165, -0.4047],
 # [ 2.5516, -2.2446, -0.9942],
@@ -205,251 +179,57 @@ from pandas.tools.plotting import scatter_matrix
 # for v in matrix:
 #     print(v)
 
-# ======================================
+# ============================================
 
-matrix = [[ 1.2492,  1.1165, -0.4047],
-[-1.4105,  1.1507,  0.1821],
-[-0.7085, -0.1136,  0.3937],
-[-1.3345, -1.2000, -0.4702],
-[ 0.7470,  0.0903,  0.0308],
-[-0.7666, -0.3737,  1.4558],
-[-0.8580, -2.1695, -0.2878],
-[-2.4023, -1.3127, -0.2521],
-[-1.2248, -0.9797, -1.5384],
-[-2.3916,  1.0420,  0.4376],
-[-1.4071,  1.3875, -0.8099],
-[ 2.5516, -2.2446, -0.9942],
-[ 0.5915, -1.1035, -1.1285],
-[ 1.7707,  1.2076, -1.7786],
-[ 2.6493,  0.0652, -1.5860],
-[ 1.8114, -1.1318, -1.2310],
-[ 3.3505,  0.2709, -0.7726],
-[ 3.2005, -0.1396, -2.5078],
-[ 1.0947,  1.0073, -2.5146],
-[ 1.9913, -3.0108, -0.7463]]
+"""" Pearson Correlation """
 
-xmatrix = [1.2492,
--1.4105,
--0.7085,
--1.3345,
- 0.7470,
--0.7666,
--0.8580,
--2.4023,
--1.2248,
--2.3916,
--1.4071,
- 2.5516,
- 0.5915,
- 1.7707,
- 2.6493,
- 1.8114,
- 3.3505,
- 3.2005,
- 1.0947,
- 1.9913]
-
-ymatrix = [1.1165,
- 1.1507,
--0.1136,
--1.2000,
- 0.0903,
--0.3737,
--2.1695,
--1.3127,
--0.9797,
- 1.0420,
- 1.3875,
--2.2446,
--1.1035,
- 1.2076,
- 0.0652,
--1.1318,
- 0.2709,
--0.1396,
- 1.0073,
--3.0108]
-
-zmatrix = [
--0.4047,
- 0.1821,
- 0.3937,
--0.4702,
- 0.0308,
- 1.4558,
--0.2878,
--0.2521,
--1.5384,
- 0.4376,
--0.8099,
--0.9942,
--1.1285,
--1.7786,
--1.5860,
--1.2310,
--0.7726,
--2.5078,
--2.5146,
--0.7463,
-]
-
-# for i in range(len(matrix)):
-#     matrix[i] = normalize_vector(matrix[i])
-
-base = [[ 0.7678,  1.0333,  1.1238],
-[ 3.2928,  0.5781,  0.1123],
-[ 2.1762, -0.1982, -0.4209],
-[ 2.2573, -1.6402,  0.0644],
-[ 0.8780,  0.4453,  0.0498],
-[ 2.2275, -0.1701, -1.5150],
-[ 1.4277, -2.2305, -0.3403],
-[ 3.1926, -2.1132, -0.2538],
-[ 2.1960, -1.7024,  1.1571],
-[ 4.1724,  0.1652, -0.1968],
-[ 3.3017,  0.5174,  1.1303],
-[-1.8033, -1.3184,  0.3291],
-[-3.5624,  0.1136,  0.2770],
-[-0.1435,  0.2970, -0.8788],
-[-1.4706,  0.8298, -0.6749],
-[-2.3923, -0.1404,  0.0183],
-[-1.8824,  1.0584, -1.6618],
-[-1.4058,  1.7404, -0.0721],
-[ 0.0278, -0.2295, -1.7304],
-[-2.4226, -1.9313,  0.7797]]
-
-xbase = [ 0.7678,
- 3.2928,
- 2.1762,
- 2.2573,
- 0.8780,
- 2.2275,
- 1.4277,
- 3.1926,
- 2.1960,
- 4.1724,
- 3.3017,
--1.8033,
--3.5624,
--0.1435,
--1.4706,
--2.3923,
--1.8824,
--1.4058,
- 0.0278,
--2.4226]
-
-ybase = [1.0333,
- 0.5781,
--0.1982,
--1.6402,
- 0.4453,
--0.1701,
--2.2305,
--2.1132,
--1.7024,
- 0.1652,
- 0.5174,
--1.3184,
- 0.1136,
- 0.2970,
- 0.8298,
--0.1404,
- 1.0584,
- 1.7404,
--0.2295,
--1.9313]
-
-zbase = [
- 1.1238,
- 0.1123,
--0.4209,
- 0.0644,
- 0.0498,
--1.5150,
--0.3403,
--0.2538,
- 1.1571,
--0.1968,
- 1.1303,
- 0.3291,
- 0.2770,
--0.8788,
--0.6749,
- 0.0183,
--1.6618,
--0.0721,
--1.7304,
- 0.7797,
-]
-
-base2 = [[ 0.4696,  1.3524,  0.3122],
-[-2.1900,  1.3866,  0.8990],
-[-1.4880,  0.1223,  1.1106],
-[-2.1140, -0.9640,  0.2467],
-[-0.0325,  0.3262,  0.7477],
-[-1.5461, -0.1377,  2.1727],
-[-1.6375, -1.9335,  0.4291],
-[-3.1818, -1.0767,  0.4648],
-[-2.0043, -0.7437, -0.8214],
-[-3.1711,  1.2779,  1.1545],
-[-2.1866,  1.6234, -0.0929],
-[ 1.7720, -2.0086, -0.2772],
-[-0.1880, -0.8675, -0.4115],
-[ 0.9911,  1.4435, -1.0616],
-[ 1.8697,  0.3011, -0.8690],
-[ 1.0318, -0.8958, -0.5140],
-[ 2.5709,  0.5068, -0.0556],
-[ 2.4209,  0.0963, -1.7908],
-[ 0.3151,  1.2432, -1.7976],
-[ 1.2117, -2.7748, -0.0293]]
-
-# for i in range(len(base)):
-#     base[i] = normalize_vector(base[i])
-
-array_a = np.ndarray.flatten(np.array(zbase))
-array_b = np.ndarray.flatten(np.array(zmatrix))
-results = np.corrcoef(array_a, array_b)[0,1]
-
-# results = stats.spearmanr(ymatrix, ybase, axis=1)
-# results = stats.kendalltau(xmatrix, xbase)
-
-print(results)
-
-# =====================================================
+# x_axis_reference = [1.2492,
+# -1.4105,
+# -0.7085,
+# -1.3345,
+#  0.7470,
+# -0.7666,
+# -0.8580,
+# -2.4023,
+# -1.2248,
+# -2.3916,
+# -1.4071,
+#  2.5516,
+#  0.5915,
+#  1.7707,
+#  2.6493,
+#  1.8114,
+#  3.3505,
+#  3.2005,
+#  1.0947,
+#  1.9913]
 #
-# fig = plt.figure()
-# ax = fig.add_subplot(111, projection='3d')
 #
-# ax.scatter(x, y, z, c='r', marker='o')
 #
-# # Plot a sin curve using the x and y axes.
-# # data = np.corrcoef(x, y)
-# # xl = data[1, 0]
-# # yl = data[0, 1]
+# x_axis_result = [ 0.7678,
+#  3.2928,
+#  2.1762,
+#  2.2573,
+#  0.8780,
+#  2.2275,
+#  1.4277,
+#  3.1926,
+#  2.1960,
+#  4.1724,
+#  3.3017,
+# -1.8033,
+# -3.5624,
+# -0.1435,
+# -1.4706,
+# -2.3923,
+# -1.8824,
+# -1.4058,
+#  0.0278,
+# -2.4226]
 #
-# # Plot a sin curve using the x and y axes.
-# # xx = np.linspace(np.corrcoef(x, y)[0, 1], min(x), max(x))
-# # yy = 2*xx+1
-# # plt.plot(xx, yy, '-r', label='y=2x+1')
-#
-# ax.set_xlabel('X Label')
-# ax.set_ylabel('Y Label')
-# ax.set_zlabel('Z Label')
-#
-# plt.show()
-
-
-
-# #Plotting to our canvas
-# plt.scatter(x, z)#, align='center')
-#
-# #Showing what we plotted
-# plt.show()
+# results = np.corrcoef(x_axis_reference, x_axis_result)[0,1]
+# print(results)
 
 
 print("THE END")
-# stop = timeit.default_timer()
-
-# print('Time: ', stop - start)
-
 sys.exit(0)
